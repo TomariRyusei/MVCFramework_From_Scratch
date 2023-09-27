@@ -1,0 +1,15 @@
+{
+  "name": "tryu/mvc-framework",
+  "authors": [
+    {
+      "name": "TomariRyusei",
+      "email": "t.ryu6635@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
+    }
+  },
+  "require": {}
+}
