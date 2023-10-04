@@ -9,14 +9,16 @@ class Application
     public Request $requset;
     public Response $response;
     public Controller $controller;
+    public Database $db;
     public static Application $app;
 
-    public function __construct($rootPath)
+    public function __construct($rootPath, array $config)
     {
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
         $this->requset = new Request();
         $this->response = new Response();
+        $this->db = new Database($config['db']);
         $this->router = new Router($this->requset, $this->response);
     }
 
