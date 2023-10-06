@@ -36,9 +36,6 @@ class Database
             $instance->up();
             $this->log("Applied migration : $migration".PHP_EOL);
             $newMigrations[] = $migration;
-            // echo '<pre>';
-            // var_dump($className);
-            // echo '/<pre>';
         }
 
         // 必ず「.」「..」が存在するので、マイグレーションが発生したか(するか)はmigrationsフォルダ内をforeachで処理した後に判別している
@@ -71,6 +68,11 @@ class Database
         $migrationsStr =implode(",", array_map(fn($m) => "('$m')", $newMigrations));
         $statement = $this->pdo->prepare("INSERT INTO migrations (migration) VALUES $migrationsStr");
         $statement->execute();
+    }
+
+    public function prepare($sql)
+    {
+        return $this->pdo->prepare($sql);
     }
 
     private function log($message){

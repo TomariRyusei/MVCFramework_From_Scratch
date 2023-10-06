@@ -9,6 +9,7 @@ class Application
     public Request $requset;
     public Response $response;
     public Controller $controller;
+    public Session $session;
     public Database $db;
     public static Application $app;
 
@@ -18,6 +19,7 @@ class Application
         self::$app = $this;
         $this->requset = new Request();
         $this->response = new Response();
+        $this->session = new Session();
         $this->db = new Database($config['db']);
         $this->router = new Router($this->requset, $this->response);
     }
