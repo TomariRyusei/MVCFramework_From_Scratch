@@ -2,6 +2,8 @@
 
 namespace app\core;
 
+use app\core\exeption\NotFoundException;
+
 class Router
 {
     public Request $requset;
@@ -30,8 +32,7 @@ class Router
         $method = $this->requset->method();
         $callback = $this->routes[$method][$path] ?? false;
         if($callback === false) {
-            $this->response->setStatusCode(404);
-            return $this->renderView("_404");
+            throw new NotFoundException();
         }
 
         if(is_string($callback)){
@@ -39,8 +40,18 @@ class Router
         }
 
         if(is_array($callback)) {
-            Application::$app->controller = new $callback[0]();
-            $callback[0] = Application::$app->controller;
+            /** @var \app\core\Controller $controller */
+            $controller = new $callback[0]();
+            $controller->action = $callback[1];
+            Application::$app->controller = $controller;
+
+            // ミドルウェア実行
+            $middlewares = $controller->getMiddlewares();
+            foreach ($middlewares as $middleware) {
+                $middleware->execute();
+            }
+
+            $callback[0] = $controller;
         }
 
         return call_user_func($callback, $this->requset, $this->response);
