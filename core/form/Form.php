@@ -2,7 +2,7 @@
 
 namespace app\core\form;
 
-use app\core\form\Field;
+use app\core\form\InputField;
 use app\core\Model;
 
 class Form
@@ -20,6 +20,6 @@ class Form
 
     public function field(Model $model, $attribute)
     {
-        return new Field($model, $attribute);
+        return new InputField($model, $attribute);
     }
 }
