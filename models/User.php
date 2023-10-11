@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\core\UserModel;
+use tryu\phpmvc\UserModel;
 
 class User extends UserModel
 {

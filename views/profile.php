@@ -1,5 +1,5 @@
 <?php
-/** @var $this \app\core\vire */
+/** @var $this \tryu\phpmvc\vire */
 $this->title = 'Profile';
 ?>
 

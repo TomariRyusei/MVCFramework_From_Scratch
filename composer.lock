@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d677286463328215aab7a5255e5f86d",
+    "content-hash": "0d09b6a6a4879c78f69c71947e093b1e",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -390,6 +390,39 @@
                 }
             ],
             "time": "2023-01-26T09:26:14+00:00"
+        },
+        {
+            "name": "tryu/php-mvc-core",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TomariRyusei/MVCFramework_From_Scratch_Core.git",
+                "reference": "6e90a400cadc6d57b5b0d2562ced4f5d9aa51d2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TomariRyusei/MVCFramework_From_Scratch_Core/zipball/6e90a400cadc6d57b5b0d2562ced4f5d9aa51d2a",
+                "reference": "6e90a400cadc6d57b5b0d2562ced4f5d9aa51d2a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "tryu\\phpmvc\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "TomariRyusei",
+                    "email": "t.ryu6635@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/TomariRyusei/MVCFramework_From_Scratch_Core/issues",
+                "source": "https://github.com/TomariRyusei/MVCFramework_From_Scratch_Core/tree/v1.0.3"
+            },
+            "time": "2023-10-11T06:27:05+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
